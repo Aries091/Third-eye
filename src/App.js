@@ -1,17 +1,13 @@
 import { useState } from "react";
-// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Topbar from "./scenes/global/Topbar";
 import Sidebar from "./scenes/global/Sidebar";
-
-// import Team from "./scenes/team";
-
-// import Contacts from "./scenes/contacts";
-import Form from "./scenes/Form";
-// import FAQ from "./scenes/faq";
+// import Form from "./scenes/Form";
+import Map from "./scenes/map";
+import Dashboard from "./scenes/Dashboard";
 
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./theme";
-// import Calendar from "./scenes/Calendar/Calendar";
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -25,7 +21,11 @@ function App() {
           <Sidebar isSidebar={isSidebar} />
           <main className="content">
             <Topbar setIsSidebar={setIsSidebar} />
-           <Form/>
+            {/* BrowserRouter is defined in src/index.js */}
+            <Routes>
+              <Route path="/" element={<Dashboard />} />
+              <Route path="/map" element={<Map />} />
+            </Routes>
           </main>
         </div>
       </ThemeProvider>
