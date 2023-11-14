@@ -2,9 +2,10 @@ import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Topbar from "./scenes/global/Topbar";
 import Sidebar from "./scenes/global/Sidebar";
-// import Form from "./scenes/Form";
+import Form from "./scenes/form";
 import Map from "./scenes/map";
 import Dashboard from "./scenes/Dashboard";
+import Device from "./scenes/Device";
 
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./theme";
@@ -25,7 +26,10 @@ function App() {
             <Routes>
               <Route path="/" element={<Dashboard />} />
               <Route path="/map" element={<Map />} />
+              <Route path ="/form" element={<Form />} />
+              <Route path ="/devices" element={<Device/>} />
             </Routes>
+            
           </main>
         </div>
       </ThemeProvider>
